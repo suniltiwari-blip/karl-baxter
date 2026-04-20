@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>KU-MGT625-0326 — Managing Diverse Workplaces</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #f5f0e8;
+    --accent: #c8873a;
+    --muted: #8a8070;
+    --border: #d9d0c0;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--ink);
+    color: var(--white);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .topbar-left { opacity: 0.5; }
+  .topbar-right { opacity: 0.5; }
+
+  /* HEADER */
+  .header {
+    padding: 52px 40px 36px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .header-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .course-tag {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .header-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-download:hover { background: #b5762e; }
+  .btn-download svg { width: 15px; height: 15px; }
+  .notice {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .notice svg { width: 11px; height: 11px; opacity: 0.6; }
+
+  /* DIVIDER LINE */
+  .rule {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--ink) 60%, transparent 100%);
+  }
+
+  /* PDF EMBED AREA */
+  .viewer-wrap {
+    padding: 32px 40px 48px;
+  }
+  .viewer-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .viewer-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .pdf-frame-wrapper {
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }
+  .pdf-frame-wrapper iframe {
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    border: none;
+    display: block;
+  }
+
+  /* PLACEHOLDER (shown when no PDF yet) */
+  .pdf-placeholder {
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #faf8f4;
+    color: var(--muted);
+  }
+  .pdf-placeholder svg {
+    width: 52px;
+    height: 52px;
+    opacity: 0.25;
+  }
+  .pdf-placeholder p {
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  }
+  .pdf-placeholder span {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .footer-left { opacity: 0.7; }
+  .footer-right { opacity: 0.5; }
+
+  @media (max-width: 600px) {
+    .topbar, .header, .viewer-wrap, .footer { padding-left: 20px; padding-right: 20px; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-actions { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-left">For Educator Review Only — Not for Public Distribution</span>
+  <span class="topbar-right">baxter_KU-MGT625-0326</span>
+</div>
+
+<header class="header">
+  <div class="header-meta">
+    <span class="course-tag">KU · MGT625-0326 · 2026</span>
+    <h1>Managing Diverse<br>Workplaces</h1>
+    <p class="header-sub">Karl Baxter &nbsp;·&nbsp; Assignment Submission</p>
+  </div>
+  <div class="header-actions">
+    <a class="btn-download" href="baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download PDF
+    </a>
+    <span class="notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      Non-indexed · Private link only
+    </span>
+  </div>
+</header>
+
+<div class="rule"></div>
+
+<main class="viewer-wrap">
+  <div class="viewer-label">Document Preview</div>
+  <div class="pdf-frame-wrapper">
+    <!-- 
+      TO DEPLOY: Replace the placeholder below with:
+      <iframe src="baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" title="Managing Diverse Workplaces — Karl Baxter"></iframe>
+    -->
+    <div class="pdf-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
+      </svg>
+      <p>PDF will appear here once uploaded</p>
+      <span>baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf</span>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span class="footer-left">Hosted for academic review · LogicsSphere LLC</span>
+  <span class="footer-right">Updated: April 2026</span>
+</footer>
+
+</body>
+</html>
