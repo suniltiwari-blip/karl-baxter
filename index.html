@@ -23,7 +23,6 @@
     min-height: 100vh;
   }
 
-  /* TOP BAR */
   .topbar {
     background: var(--ink);
     color: var(--white);
@@ -38,7 +37,6 @@
   .topbar-left { opacity: 0.5; }
   .topbar-right { opacity: 0.5; }
 
-  /* HEADER */
   .header {
     padding: 52px 40px 36px;
     border-bottom: 1px solid var(--border);
@@ -106,13 +104,11 @@
   }
   .notice svg { width: 11px; height: 11px; opacity: 0.6; }
 
-  /* DIVIDER LINE */
   .rule {
     height: 3px;
     background: linear-gradient(90deg, var(--accent) 0%, var(--ink) 60%, transparent 100%);
   }
 
-  /* PDF EMBED AREA */
   .viewer-wrap {
     padding: 32px 40px 48px;
   }
@@ -147,36 +143,6 @@
     display: block;
   }
 
-  /* PLACEHOLDER (shown when no PDF yet) */
-  .pdf-placeholder {
-    width: 100%;
-    height: 75vh;
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    background: #faf8f4;
-    color: var(--muted);
-  }
-  .pdf-placeholder svg {
-    width: 52px;
-    height: 52px;
-    opacity: 0.25;
-  }
-  .pdf-placeholder p {
-    font-size: 14px;
-    letter-spacing: 0.03em;
-  }
-  .pdf-placeholder span {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.6;
-  }
-
-  /* FOOTER */
   .footer {
     border-top: 1px solid var(--border);
     padding: 18px 40px;
@@ -211,7 +177,7 @@
     <p class="header-sub">Karl Baxter &nbsp;·&nbsp; Assignment Submission</p>
   </div>
   <div class="header-actions">
-    <a class="btn-download" href="baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" download>
+    <a class="btn-download" href="Baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
         <polyline points="7 10 12 15 17 10"/>
@@ -233,22 +199,7 @@
 <main class="viewer-wrap">
   <div class="viewer-label">Document Preview</div>
   <div class="pdf-frame-wrapper">
-    <!-- 
-      TO DEPLOY: Replace the placeholder below with:
-      <iframe src="baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" title="Managing Diverse Workplaces — Karl Baxter"></iframe>
-    -->
-    <div class="pdf-placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-        <polyline points="10 9 9 9 8 9"/>
-      </svg>
-      <p>PDF will appear here once uploaded</p>
-      <span>      <iframe src="baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" title="Managing Diverse Workplaces — Karl Baxter"></iframe>
-</span>
-    </div>
+    <iframe src="Baxter_KU-MGT625-0326_Managing_Diverse_Workplaces.pdf" title="Managing Diverse Workplaces — Karl Baxter"></iframe>
   </div>
 </main>
 
